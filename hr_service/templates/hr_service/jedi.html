@@ -1,0 +1,24 @@
+{% extends "hr_service/index.html" %}
+
+
+{% block content %}
+
+<h1>{{ section.title }}</h1>
+<body>
+    <h1>Jedi Page</h1>
+    <hr>
+
+    <form action="candidates/" method="post">
+
+        {% csrf_token %}
+        <select id="jedis" name="jedi">
+            {% for jedi in jedis %}
+                <option value="{{jedi.id}}">{{jedi.name}} ({{jedi.padawan_count}} padawans)</option>
+            {% endfor %}
+        </select><br>
+    
+        <input type="submit" value="Select">
+    </form>
+
+</body>
+{% endblock %}

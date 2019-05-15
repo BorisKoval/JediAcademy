@@ -25,7 +25,7 @@ SECRET_KEY = '$f47pi^628)@39&v=++z8-u$=m!m38(bzlq8mrqs(%j8t8#^r4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kbn-pc']
+ALLOWED_HOSTS = ['localhost', 'kbn-pc']
 
 
 # Application definition
