@@ -5,8 +5,6 @@ from django.urls import reverse
 from .models import Candidate, Planet, Jedi, Challenge, Answer, Padawan
 from django.core.mail import send_mail
 
-# Create your views here.
-
 def Index(request):
     template = 'hr_service/index.html'
     return render(request, template)
@@ -90,7 +88,7 @@ def ResultsView(request, planet_id, jedi_id, candidate_id):
 def BecomePadawan(request, planet_id, jedi_id, candidate_id):
     template = 'hr_service/padawan.html'
 
-    #ограничение на кол-во падаванов
+    #ограничение на кол-во падаванов, не более 3
     if Padawan.objects.filter(jedi_id=jedi_id).count() > 3:
         return HttpResponseRedirect(reverse('candidates:candidates', args=(planet_id, jedi_id, )))
     

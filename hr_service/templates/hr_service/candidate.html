@@ -5,28 +5,28 @@
 
 <h1>{{ section.title }}</h1>
 <body>
-    <h1>Candidate Page</h1>
+    <h1>Кандидат</h1>
     <hr>
     <form action="challenge/" method="post">
 
             {% csrf_token %}
-            <label for="candidate">Name:</label><br>
+            <label for="candidate">Имя:</label><br>
             <input type="text" name="name" id="candidate" value="Test Name"><br>
-            <label for="planets">Planeta:</label><br>
+            <label for="planets">Планета:</label><br>
             <select id="planets" name="planet">
                 {% for i in planets %}
                     <option value="{{i.id}}">{{i}}</option>
                 {% endfor %}
             </select><br>
 
-            <label for="age">Age:</label><br>
+            <label for="age">Возраст:</label><br>
             <input type="text" name="age" id="candidate" value="123"><br>
             
             <label for="email">Email:</label><br>
             <input type="text" name="email" id="candidate" value="mail@email.com"><br>
             
             
-            <input type="submit" value="Next">
+            <input type="submit" value="Далее">
     </form>
 
 

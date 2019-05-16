@@ -10,7 +10,7 @@
 
     <ul>
         {% for jedi, padawans in jedis_and_padawans.items %}
-            <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }} ({{padawans}} padawans)</a></li>
+            <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }} ({{padawans}} падаванов)</a></li>
         {% endfor %}
     </ul>
 
@@ -19,7 +19,7 @@
     <ul>
             {% for jedi, padawans in jedis_and_padawans.items %}
                 {% if padawans > 1 %}
-                    <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }} ({{padawans}} padawans)</a></li>
+                    <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }} ({{padawans}} падаванов)</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

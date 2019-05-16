@@ -13,7 +13,4 @@ urlpatterns = [
     path(r'jedi/<int:jedi_id>/planet/<int:planet_id>/candidates/', views.CandidatesView, name='candidates'),
     path(r'jedi/<int:jedi_id>/planet/<int:planet_id>/<int:candidate_id>/results/', views.ResultsView, name='results'),
     path(r'jedi/<int:jedi_id>/planet/<int:planet_id>/<int:candidate_id>/results/padawan/', views.BecomePadawan, name='padawan'),
-
-    #path('create/', views.Create, name='create'),
-    #path('<int:candidate_id>/candidate/', views.CandidatesView, name='candidates'),
 ]

@@ -5,9 +5,7 @@
 
 <h1>{{ section.title }}</h1>
 <body>
-    <h1>Challenge Page</h1>
-    <h1>Welcome {{ candidate.name }}!</h1>
-    <hr>
+    <h1>Добро пожаловать! {{ candidate.name }} можешь пройти тест: </h1>
     
     <form action="thanks/" method="post">
         {% csrf_token %}
@@ -16,7 +14,7 @@
             <input type="checkbox" name="answer" id="answer[]" value="{{question.id}}"><br>
         {% endfor %}
         
-        <input type="submit" value="Finish">
+        <input type="submit" value="Закончить">
     </form>
 
 
