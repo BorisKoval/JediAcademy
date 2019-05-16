@@ -9,9 +9,10 @@
 
     <ul>
         {% for candidate in candidates %}
-            <li><a href="{% url 'candidates:candidates' candidate.id %}">{{ candidate.name }}</a></li>
+            <li><a href="{% url 'candidates:results' jedi_id candidate.planet_id candidate.id  %}">{{ candidate.name }} {{ candidate.id }}</a></li>
         {% endfor %}
     </ul>
+    <input type="button" value="BACK" onclick="javascript:history.go(-1);">
 
 </body>
 {% endblock %}

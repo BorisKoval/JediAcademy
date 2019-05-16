@@ -5,25 +5,24 @@
 
 <h1>{{ section.title }}</h1>
 <body>
-    <h1>Jedi Page</h1>
-    <hr>
+    <h3>Список Джедаев:</h3>
+    
 
     <ul>
-        {% for jedi in jedis %}
-            <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }}</a></li>
+        {% for jedi, padawans in jedis_and_padawans.items %}
+            <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }} ({{padawans}} padawans)</a></li>
         {% endfor %}
     </ul>
-    
-<!--     <form action="candidates/" method="post">
-        {% csrf_token %}
-        <select id="jedis" name="jedi">
-            {% for jedi in jedis %}
-                <option value="{{jedi.id}}">{{jedi.name}} ({{jedi.padawan_count}} padawans)</option>
+
+    <hr>
+    <h3>Список Джедаев, у которых больше 1 падавана:</h3>
+    <ul>
+            {% for jedi, padawans in jedis_and_padawans.items %}
+                {% if padawans > 1 %}
+                    <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }} ({{padawans}} padawans)</a></li>
+                {% endif %}
             {% endfor %}
-        </select><br>
-    
-        <input type="submit" value="Select">
-    </form> -->
+        </ul>
 
 </body>
 {% endblock %}

@@ -3,9 +3,18 @@
 {% block content %}
 
 <body>
-    <h1>Candidates results Page</h1>
+    <h1>{{candidate_name}}'s results Page</h1>
     <hr>
+    <form action="padawan/" method="post">
+        {% csrf_token %}
+        {% for question, answer in result_data.items %}
+            <label for="answer">{{question}}</label><br>
+            <input type="checkbox" name="answer" id="" {% if answer %} checked="checked" {% endif %}><br>
+        {% endfor %}
 
+        <input type="button" value="BACK" onclick="javascript:history.go(-1);">
+        <input type="submit" value="Make PADAWAN">
+    </form>
 
 </body>
 {% endblock %}
