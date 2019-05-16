@@ -24,6 +24,7 @@ urlpatterns = [
     path('create/', include('hr_service.urls')),
     path('challenge/', include('hr_service.urls')),
     path('candidates/', include('hr_service.urls')),
+    path('thanks/', include('hr_service.urls')),
 
     path('admin/', admin.site.urls),
 ]

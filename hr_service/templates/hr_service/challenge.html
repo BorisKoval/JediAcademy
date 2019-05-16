@@ -6,7 +6,19 @@
 <h1>{{ section.title }}</h1>
 <body>
     <h1>Challenge Page</h1>
+    <h1>Welcome {{ candidate.name }}!</h1>
     <hr>
     
+    <form action="thanks/" method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+            <label for="answer">{{question.question}}</label><br>
+            <input type="checkbox" name="answer" id="answer[]" value="{{question.id}}"><br>
+        {% endfor %}
+        
+        <input type="submit" value="Finish">
+    </form>
+
+
 </body>
 {% endblock %}

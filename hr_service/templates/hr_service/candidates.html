@@ -3,11 +3,15 @@
 
 {% block content %}
 
-<h1>{{ section.title }}</h1>
 <body>
     <h1>Candidates Page</h1>
     <hr>
-   
+
+    <ul>
+        {% for candidate in candidates %}
+            <li><a href="{% url 'candidates:candidates' candidate.id %}">{{ candidate.name }}</a></li>
+        {% endfor %}
+    </ul>
 
 </body>
 {% endblock %}

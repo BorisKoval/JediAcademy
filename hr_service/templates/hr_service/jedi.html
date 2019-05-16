@@ -8,8 +8,13 @@
     <h1>Jedi Page</h1>
     <hr>
 
-    <form action="candidates/" method="post">
-
+    <ul>
+        {% for jedi in jedis %}
+            <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }}</a></li>
+        {% endfor %}
+    </ul>
+    
+<!--     <form action="candidates/" method="post">
         {% csrf_token %}
         <select id="jedis" name="jedi">
             {% for jedi in jedis %}
@@ -18,7 +23,7 @@
         </select><br>
     
         <input type="submit" value="Select">
-    </form>
+    </form> -->
 
 </body>
 {% endblock %}

@@ -7,12 +7,11 @@
 <body>
     <h1>Candidate Page</h1>
     <hr>
-
-    <form action="create/" method="post">
+    <form action="challenge/" method="post">
 
             {% csrf_token %}
             <label for="candidate">Name:</label><br>
-            <input type="text" name="name" id="candidate" value="{{candidate.id}}"><br>
+            <input type="text" name="name" id="candidate" value="Test Name"><br>
             <label for="planets">Planeta:</label><br>
             <select id="planets" name="planet">
                 {% for i in planets %}
@@ -21,10 +20,10 @@
             </select><br>
 
             <label for="age">Age:</label><br>
-            <input type="text" name="age" id="candidate" value="{{candidate.age}}"><br>
+            <input type="text" name="age" id="candidate" value="123"><br>
             
             <label for="email">Email:</label><br>
-            <input type="text" name="email" id="candidate" value="{{candidate.email}}"><br>
+            <input type="text" name="email" id="candidate" value="mail@email.com"><br>
             
             
             <input type="submit" value="Next">
