@@ -2,4 +2,5 @@
 *.py[cod]
 .vscode
 */migrations/
+/static/
 

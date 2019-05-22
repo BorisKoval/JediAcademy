@@ -3,13 +3,13 @@
 {% block content %}
 
 <body>
-    <h1>Результаты кандидата: {{candidate_name}}</h1>
+    <h1>Результаты кандидата {{candidate_name}}:</h1>
     <hr>
     <form action="padawan/" method="post">
         {% csrf_token %}
-        {% for question, answer in result_data.items %}
-            <label for="answer">{{question}}</label><br>
-            <input type="checkbox" name="answer" id="" {% if answer %} checked="checked" {% endif %} readonly /><br>
+        {% for challenge in result_data %}
+            <label for="answer">{{challenge.question}}</label><br>
+            <input type="checkbox" name="answer" id="" {% if challenge.result %} checked="checked" {% endif %} readonly /><br>
         {% endfor %}
 
         <input type="button" value="Назад" onclick="javascript:history.go(-1);">

@@ -9,17 +9,17 @@
     
 
     <ul>
-        {% for jedi, padawans in jedis_and_padawans.items %}
-            <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }} ({{padawans}} падаванов)</a></li>
+        {% for jedi in jedis_and_padawans %}
+            <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }} ({{jedi.padawan__count}} падаванов)</a></li>
         {% endfor %}
     </ul>
 
     <hr>
     <h3>Список Джедаев, у которых больше 1 падавана:</h3>
     <ul>
-            {% for jedi, padawans in jedis_and_padawans.items %}
-                {% if padawans > 1 %}
-                    <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }} ({{padawans}} падаванов)</a></li>
+            {% for jedi in jedis_and_padawans %}
+                {% if jedi.padawan__count > 1 %}
+                    <li><a href="{% url 'candidates:candidates' jedi.id jedi.planet_id %}">{{ jedi.name }} ({{jedi.padawan__count}} падаванов)</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
